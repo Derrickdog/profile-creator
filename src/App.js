@@ -1,9 +1,10 @@
 import './App.css';
+import FormGeneral from './components/FormGeneral';
 
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <FormGeneral />
     </div>
   );
 }
