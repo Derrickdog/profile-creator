@@ -10,7 +10,12 @@ class FormGeneral extends Component {
          lastName: '',
          email: '',
          phoneNumber: '',
-         description: ''
+         description: '',
+         firstNameDisplay: '',
+         lastNameDisplay: '',
+         emailDisplay: '',
+         phoneNumberDisplay: '',
+         descriptionDisplay: ''
       }
     }
 
@@ -47,16 +52,18 @@ class FormGeneral extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       const { firstName, lastName, email, phoneNumber, description } = this.state;
-      // alert(`${this.state.firstName}, ${this.state.lastName}, ${this.state.email}`);
-      return (
-        <div>
-          <h2>{firstName}</h2>
-          <h2>{lastName}</h2>
-          <h2>{email}</h2>
-          <h2>{phoneNumber}}</h2>
-          <h2>{description}</h2>
-        </div>
-      )
+      this.setState({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phoneNumber: phoneNumber,
+        description: description,
+        firstNameDisplay: firstName,
+        lastNameDisplay: lastName,
+        emailDisplay: email,
+        phoneNumberDisplay: phoneNumber,
+        descriptionDisplay: description
+      })
     }
 
   render() {
@@ -87,11 +94,11 @@ class FormGeneral extends Component {
           <button type='submit'>Submit</button>
         </form>
         <div>
-          <h2>{firstName}</h2>
-          <h2>{lastName}</h2>
-          <h2>{email}</h2>
-          <h2>{phoneNumber}</h2>
-          <h2>{description}</h2>
+          <h2>{this.state.firstNameDisplay}</h2>
+          <h2>{this.state.lastNameDisplay}</h2>
+          <h2>{this.state.emailDisplay}</h2>
+          <h2>{this.state.phoneNumberDisplay}</h2>
+          <h2>{this.state.descriptionDisplay}</h2>
         </div>
       </div>
     )
