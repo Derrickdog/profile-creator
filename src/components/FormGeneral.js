@@ -46,35 +46,54 @@ class FormGeneral extends Component {
 
     handleSubmit = (e) => {
       e.preventDefault();
-      alert(`${this.state.firstName}, ${this.state.lastName}, ${this.state.email}`);
+      const { firstName, lastName, email, phoneNumber, description } = this.state;
+      // alert(`${this.state.firstName}, ${this.state.lastName}, ${this.state.email}`);
+      return (
+        <div>
+          <h2>{firstName}</h2>
+          <h2>{lastName}</h2>
+          <h2>{email}</h2>
+          <h2>{phoneNumber}}</h2>
+          <h2>{description}</h2>
+        </div>
+      )
     }
 
   render() {
     const { firstName, lastName, email, phoneNumber, description } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+              <label>First Name</label>
+              <input type='text' value={firstName} onChange={this.handleFirstNameChange} />
+          </div>
+          <div>
+              <label>Last Name</label>
+              <input type='text' value={lastName} onChange={this.handleLastNameChange} />
+          </div>
+          <div>
+              <label>Email</label>
+              <input type='email' value={email} onChange={this.handleEmailChange} />
+          </div>
+          <div>
+              <label>Phone Number</label>
+              <input type='phone' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
+          </div>
+          <div>
+              <label>Description</label>
+              <textarea rows='3' cols='30' value={description} onChange={this.handleDescriptionChange} />
+          </div>
+          <button type='submit'>Submit</button>
+        </form>
         <div>
-            <label>First Name</label>
-            <input type='text' value={firstName} onChange={this.handleFirstNameChange} />
+          <h2>{firstName}</h2>
+          <h2>{lastName}</h2>
+          <h2>{email}</h2>
+          <h2>{phoneNumber}</h2>
+          <h2>{description}</h2>
         </div>
-        <div>
-            <label>Last Name</label>
-            <input type='text' value={lastName} onChange={this.handleLastNameChange} />
-        </div>
-        <div>
-            <label>Email</label>
-            <input type='email' value={email} onChange={this.handleEmailChange} />
-        </div>
-        <div>
-            <label>Phone Number</label>
-            <input type='phone' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
-        </div>
-        <div>
-            <label>Description</label>
-            <textarea rows='3' cols='30' value={description} onChange={this.handleDescriptionChange} />
-        </div>
-        <button type='submit'>Submit</button>
-      </form>
+      </div>
     )
   }
 }
