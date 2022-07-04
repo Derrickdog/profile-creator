@@ -10,12 +10,12 @@ class FormGeneral extends Component {
          lastName: '',
          email: '',
          phoneNumber: '',
-         description: '',
-         firstNameDisplay: '',
-         lastNameDisplay: '',
-         emailDisplay: '',
-         phoneNumberDisplay: '',
-         descriptionDisplay: ''
+        //  description: '',
+        //  firstNameDisplay: '',
+        //  lastNameDisplay: '',
+        //  emailDisplay: '',
+        //  phoneNumberDisplay: '',
+        //  descriptionDisplay: ''
       }
     }
 
@@ -49,25 +49,25 @@ class FormGeneral extends Component {
       })
     }
 
-    handleSubmit = (e) => {
-      e.preventDefault();
-      const { firstName, lastName, email, phoneNumber, description } = this.state;
-      this.setState({
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phoneNumber: phoneNumber,
-        description: description,
-        firstNameDisplay: firstName,
-        lastNameDisplay: lastName,
-        emailDisplay: email,
-        phoneNumberDisplay: phoneNumber,
-        descriptionDisplay: description
-      })
-    }
+    // handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   const { firstName, lastName, email, phoneNumber, description } = this.state;
+    //   this.setState({
+    //     firstName: firstName,
+    //     lastName: lastName,
+    //     email: email,
+    //     phoneNumber: phoneNumber,
+    //     description: description,
+    //     firstNameDisplay: firstName,
+    //     lastNameDisplay: lastName,
+    //     emailDisplay: email,
+    //     phoneNumberDisplay: phoneNumber,
+    //     descriptionDisplay: description
+    //   })
+    // }
 
   render() {
-    const { firstName, lastName, email, phoneNumber, description } = this.state;
+    const { firstName, lastName, email, phoneNumber } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -87,18 +87,22 @@ class FormGeneral extends Component {
               <label>Phone Number</label>
               <input type='phone' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
           </div>
-          <div>
+          {/* <div>
               <label>Description</label>
               <textarea rows='3' cols='30' value={description} onChange={this.handleDescriptionChange} />
-          </div>
-          <button type='submit'>Submit</button>
+          </div> */}
+          {/* <button type='submit'>Submit</button> */}
         </form>
         <div>
-          <h2>{this.state.firstNameDisplay}</h2>
+          {/* <h2>{this.state.firstNameDisplay}</h2>
           <h2>{this.state.lastNameDisplay}</h2>
           <h2>{this.state.emailDisplay}</h2>
           <h2>{this.state.phoneNumberDisplay}</h2>
-          <h2>{this.state.descriptionDisplay}</h2>
+          <h2>{this.state.descriptionDisplay}</h2> */}
+          <h1>{firstName} {lastName}</h1>
+          <p>{email}</p>
+          <p>{phoneNumber}</p>
+          {/* <p>{description}</p> */}
         </div>
       </div>
     )
