@@ -10,10 +10,9 @@ class FormGeneral extends Component {
          lastName: 'Smith',
          email: 'johnsmith@gmail.com',
          phoneNumber: '123-456-7890',
-         schoolName: 'Binghamton University',
+         schoolName: 'Cornell University',
          degree: 'BS',
          studies: 'Computer Science',
-         gpa: '3.9',
          graduationDate: 'May 2020'
       }
     }
@@ -66,12 +65,6 @@ class FormGeneral extends Component {
       })
     }
 
-    handleGpa = (e) => {
-      this.setState({
-          gpa: e.target.value
-      })
-    }
-
     handleGraduation = (e) => {
       this.setState({
           graduationDate: e.target.value
@@ -87,13 +80,12 @@ class FormGeneral extends Component {
         schoolName: '',
         degree: '',
         studies: '',
-        gpa: '',
         graduationDate: ''
       })
     }
 
   render() {
-    const { firstName, lastName, email, phoneNumber, schoolName, degree, studies, gpa, graduationDate } = this.state;
+    const { firstName, lastName, email, phoneNumber, schoolName, degree, studies, graduationDate } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -134,10 +126,6 @@ class FormGeneral extends Component {
                 <label>Graduation</label><br />
                 <input type='text' value={graduationDate} onChange={this.handleGraduation} />
             </div>
-            {/* <div>
-                <label>GPA</label><br />
-                <input type='number' value={gpa} onChange={this.handleGpa} />
-            </div> */}
           </div>
           <button type='reset' onClick={this.handleReset}>Reset</button>
         </form>
