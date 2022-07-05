@@ -10,5 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  margin: 30px;
+  margin: 30px 50px;
+}
+
+.profile {
+  margin-top: 30px;
+}
+
+.information {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 3px 6px;
 }
