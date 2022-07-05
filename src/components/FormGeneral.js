@@ -10,12 +10,11 @@ class FormGeneral extends Component {
          lastName: '',
          email: '',
          phoneNumber: '',
-        //  description: '',
-        //  firstNameDisplay: '',
-        //  lastNameDisplay: '',
-        //  emailDisplay: '',
-        //  phoneNumberDisplay: '',
-        //  descriptionDisplay: ''
+         schoolName: '',
+         degree: '',
+         studies: '',
+         gpa: '',
+         graduationDate: ''
       }
     }
 
@@ -49,27 +48,41 @@ class FormGeneral extends Component {
       })
     }
 
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   const { firstName, lastName, email, phoneNumber, description } = this.state;
-    //   this.setState({
-    //     firstName: firstName,
-    //     lastName: lastName,
-    //     email: email,
-    //     phoneNumber: phoneNumber,
-    //     description: description,
-    //     firstNameDisplay: firstName,
-    //     lastNameDisplay: lastName,
-    //     emailDisplay: email,
-    //     phoneNumberDisplay: phoneNumber,
-    //     descriptionDisplay: description
-    //   })
-    // }
+    handleSchool = (e) => {
+      this.setState({
+          schoolName: e.target.value
+      })
+    }
+
+    handleDegree = (e) => {
+      this.setState({
+          degree: e.target.value
+      })
+    }
+
+    handleStudies = (e) => {
+      this.setState({
+          studies: e.target.value
+      })
+    }
+
+    handleGpa = (e) => {
+      this.setState({
+          gpa: e.target.value
+      })
+    }
+
+    handleGraduation = (e) => {
+      this.setState({
+          graduationDate: e.target.value
+      })
+    }
 
   render() {
-    const { firstName, lastName, email, phoneNumber } = this.state;
+    const { firstName, lastName, email, phoneNumber, schoolName, degree, studies, gpa, graduationDate } = this.state;
     return (
       <div>
+        <h2>Contact Information</h2>
         <form onSubmit={this.handleSubmit}>
           <div>
               <label>First Name</label>
@@ -87,22 +100,35 @@ class FormGeneral extends Component {
               <label>Phone Number</label>
               <input type='phone' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
           </div>
-          {/* <div>
-              <label>Description</label>
-              <textarea rows='3' cols='30' value={description} onChange={this.handleDescriptionChange} />
-          </div> */}
-          {/* <button type='submit'>Submit</button> */}
+          <h2>Education Information</h2>
+          <div>
+              <label>School Name</label>
+              <input type='text' value={schoolName} onChange={this.handleSchool} />
+          </div>
+          <div>
+              <label>Degree</label>
+              <input type='text' value={degree} onChange={this.handleDegree} />
+          </div>
+          <div>
+              <label>Studies</label>
+              <input type='text' value={studies} onChange={this.handleStudies} />
+          </div>
+          <div>
+              <label>Graduation</label>
+              <input type='text' value={graduationDate} onChange={this.handleGraduation} />
+          </div>
+          <div>
+              <label>GPA</label>
+              <input type='number' value={gpa} onChange={this.handleGpa} />
+          </div>
         </form>
         <div>
-          {/* <h2>{this.state.firstNameDisplay}</h2>
-          <h2>{this.state.lastNameDisplay}</h2>
-          <h2>{this.state.emailDisplay}</h2>
-          <h2>{this.state.phoneNumberDisplay}</h2>
-          <h2>{this.state.descriptionDisplay}</h2> */}
           <h1>{firstName} {lastName}</h1>
           <p>{email}</p>
           <p>{phoneNumber}</p>
-          {/* <p>{description}</p> */}
+          <h2>{schoolName}</h2>
+          <p>{degree} {studies} {graduationDate}</p>
+          <p>{gpa}</p>
         </div>
       </div>
     )
